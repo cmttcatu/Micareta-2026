@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micareta 2026 - Acesso de Veículos</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f4f7;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px 20px;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.status {
+    background: #198754;
+    color: white;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.erro {
+    background: #dc3545;
+}
+
+.dados {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.placa {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.validade {
+    margin-top: 25px;
+    padding: 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.aviso {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>MICARETA 2026</h1>
+<div class="subtitulo">Controle de acesso de veículos</div>
+
+<div id="conteudo"></div>
+
+</div>
+
+<script>
+
+const cadastros = {
+
+    "A7K92X": {
+        nome: "Moisés de Araújo Santos",
+        marca: "CAOA Chery",
+        modelo: "Tiggo 5X",
+        placa: "RDG3C84"
+    }
+
+};
+
+const parametros = new URLSearchParams(window.location.search);
+const codigo = parametros.get("id");
+
+const conteudo = document.getElementById("conteudo");
+
+if (codigo && cadastros[codigo]) {
+
+    const pessoa = cadastros[codigo];
+
+    conteudo.innerHTML = `
+        <div class="status">
+            ✓ ACESSO AUTORIZADO
+        </div>
+
+        <div class="dados">
+            <strong>Morador:</strong><br>
+            ${pessoa.nome}<br><br>
+
+            <strong>Veículo:</strong><br>
+            ${pessoa.marca} ${pessoa.modelo}<br><br>
+
+            <strong>Placa:</strong><br>
+            <span class="placa">${pessoa.placa}</span>
+        </div>
+
+        <div class="validade">
+            VÁLIDO SOMENTE<br>
+            26 e 27/09/2026
+        </div>
+
+        <div class="aviso">
+            Confira se a placa apresentada corresponde ao veículo.
+        </div>
+    `;
+
+} else {
+
+    conteudo.innerHTML = `
+        <div class="status erro">
+            ✕ CREDENCIAL INVÁLIDA
+        </div>
+
+        <p>Este QR Code não corresponde a um veículo autorizado.</p>
+    `;
+
+}
+
+</script>
+
+</body>
+</html>
