@@ -4,147 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Micareta 2026 - Acesso de Veículos</title>
-
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f4f7;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-}
-
-.container {
-    max-width: 500px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px 20px;
-    border-radius: 18px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-}
-
-h1 {
-    margin-bottom: 5px;
-}
-
-.subtitulo {
-    color: #666;
-    margin-bottom: 25px;
-}
-
-.status {
-    background: #198754;
-    color: white;
-    padding: 18px;
-    border-radius: 12px;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 25px;
-}
-
-.erro {
-    background: #dc3545;
-}
-
-.dados {
-    text-align: left;
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-.placa {
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.validade {
-    margin-top: 25px;
-    padding: 15px;
-    background: #f5f5f5;
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-.aviso {
-    margin-top: 20px;
-    font-size: 14px;
-    color: #666;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>MICARETA 2026</h1>
-<div class="subtitulo">Controle de acesso de veículos</div>
-
-<div id="conteudo"></div>
-
-</div>
-
-<script>
-
-const cadastros = {
-
-    "A7K92X": {
-        nome: "Moisés de Araújo Santos",
-        marca: "CAOA Chery",
-        modelo: "Tiggo 5X",
-        placa: "RDG3C84"
-    }
-
-};
-
-const parametros = new URLSearchParams(window.location.search);
-const codigo = parametros.get("id");
-
-const conteudo = document.getElementById("conteudo");
-
-if (codigo && cadastros[codigo]) {
-
-    const pessoa = cadastros[codigo];
-
-    conteudo.innerHTML = `
-        <div class="status">
-            ✓ ACESSO AUTORIZADO
-        </div>
-
-        <div class="dados">
-            <strong>Morador:</strong><br>
-            ${pessoa.nome}<br><br>
-
-            <strong>Veículo:</strong><br>
-            ${pessoa.marca} ${pessoa.modelo}<br><br>
-
-            <strong>Placa:</strong><br>
-            <span class="placa">${pessoa.placa}</span>
-        </div>
-
-        <div class="validade">
-            VÁLIDO SOMENTE<br>
-            26 e 27/09/2026
-        </div>
-
-        <div class="aviso">
-            Confira se a placa apresentada corresponde ao veículo.
-        </div>
-    `;
-
+body{font-family:Arial,sans-serif;background:#f2f4f7;margin:0;padding:20px;text-align:center}
+.container{max-width:500px;margin:40px auto;background:#fff;padding:30px 20px;border-radius:18px;box-shadow:0 4px 15px rgba(0,0,0,.12)}
+h1{margin-bottom:5px} .subtitulo{color:#666;margin-bottom:25px}
+.status{background:#198754;color:#fff;padding:18px;border-radius:12px;font-size:24px;font-weight:bold;margin-bottom:25px}
+.erro{background:#dc3545} .dados{text-align:left;font-size:18px;line-height:1.8}
+.placa{font-size:28px;font-weight:bold} .validade{margin-top:25px;padding:15px;background:#f5f5f5;border-radius:10px;font-weight:bold}
+.aviso{margin-top:20px;font-size:14px;color:#666}
+</style></head><body><div class="container">
+<h1>MICARETA 2026</h1><div class="subtitulo">Controle de acesso de veículos</div><div id="conteudo"></div>
+</div><script>
+const cadastros = {"MC26-F25EFD77": {"nome": "Vinicius Santana Araujo", "veiculo": "Creta", "placa": "TNU3D94", "status": "ATIVO"}, "MC26-8828BAEC": {"nome": "Elinaldo Lima Estrela", "veiculo": "Fiesta cor preta", "placa": "JSD3614", "status": "ATIVO"}, "MC26-B16C2ADD": {"nome": "Fabricio da Gama Santana", "veiculo": "Chevrolet", "placa": "QQJ4J92", "status": "ATIVO"}, "MC26-E38C7C3C": {"nome": "Nadia Melo", "veiculo": "Hyundai HB20", "placa": "OZK7940", "status": "ATIVO"}, "MC26-C085C74D": {"nome": "Evelin de Cerqueira Melo", "veiculo": "GWM", "placa": "SKE0D99", "status": "ATIVO"}, "MC26-5EF6CADF": {"nome": "Francisco Antônio Gomes Figueredo", "veiculo": "VW Gol", "placa": "OUV5G98", "status": "ATIVO"}, "MC26-70C54538": {"nome": "Antonio Carlos dos Santos", "veiculo": "Fiat Punto 2014 1.6", "placa": "OUX0H21", "status": "ATIVO"}, "MC26-06A7E3FB": {"nome": "Joceli Bispo de Araújo", "veiculo": "RAM Rampage", "placa": "SJP5I38", "status": "ATIVO"}, "MC26-45F990EF": {"nome": "Joceli Bispo de Araújo", "veiculo": "Honda Biz", "placa": "PJW1698", "status": "ATIVO"}, "MC26-9B1A11AB": {"nome": "Romir Da Silva Guerra", "veiculo": "Hyundai HB20", "placa": "OVB3E03", "status": "ATIVO"}, "MC26-F01C7DA0": {"nome": "Hebert Jones Costa De Souza", "veiculo": "Honda POP 110I ES", "placa": "SKP2H98", "status": "ATIVO"}, "MC26-3AC5936D": {"nome": "Matheus Ferreira", "veiculo": "Peugeot", "placa": "RPS1C15", "status": "ATIVO"}, "MC26-D12E0D72": {"nome": "Edeilton A. Nascimento da Silva", "veiculo": "Fiat", "placa": "TZR8H47", "status": "ATIVO"}, "MC26-4D9CB991": {"nome": "Douglas da Silva Santos", "veiculo": "Corolla", "placa": "DUJ6F71", "status": "ATIVO"}, "MC26-63D4DD88": {"nome": "Edilza Nascimento da Silva", "veiculo": "Logan", "placa": "RDG5G77", "status": "ATIVO"}, "MC26-C9F839C0": {"nome": "Roberto de Sena Costa", "veiculo": "Spin", "placa": "OVD3F84", "status": "ATIVO"}, "MC26-E3809704": {"nome": "Vinicius Lago (médico HMC)", "veiculo": "Haval H6", "placa": "TCA6A09", "status": "ATIVO"}, "MC26-1340BDA2": {"nome": "Edmundo Silva Santos", "veiculo": "VW Saveiro", "placa": "PJJ3I35", "status": "ATIVO"}, "MC26-EB6E3A6D": {"nome": "Adenilson de Jesus Santana", "veiculo": "Fox", "placa": "OZV4C32", "status": "ATIVO"}, "MC26-FDB5DD4C": {"nome": "Jemerson Silva de Jesus Santana", "veiculo": "Honda Biz", "placa": "OZG5405", "status": "ATIVO"}, "MC26-291EF5D0": {"nome": "Genilson de Jesus Santos", "veiculo": "Honda POP 110I", "placa": "RPU4I61", "status": "ATIVO"}, "MC26-03C2C5E0": {"nome": "Jerffson RLeal", "veiculo": "Chevrolet Tracker", "placa": "TMM8J59", "status": "ATIVO"}, "MC26-F68DB01F": {"nome": "Moisés de Araújo Santos", "veiculo": "CAOA Chery Tiggo 5X", "placa": "RDG3C84", "status": "ATIVO"}, "MC26-1DFD7D00": {"nome": "Marianna Silva de Araújo", "veiculo": "Corolla Cross", "placa": "SJQ0146", "status": "ATIVO"}, "MC26-FC77A48A": {"nome": "Isabella Camilla Pereira de Araújo Fernandes", "veiculo": "Volkswagen T-Cross", "placa": "SUQ2C04", "status": "ATIVO"}, "MC26-7D958F45": {"nome": "Caio Souza dos Reis Bartilotti", "veiculo": "Renault Sandero Stepway", "placa": "PLI4974", "status": "ATIVO"}, "MC26-334EC920": {"nome": "José Augusto Monteiro de Castro Lima", "veiculo": "Renault Oroch", "placa": "SKT9B62", "status": "ATIVO"}, "MC26-AEC346FF": {"nome": "Edelson de Jesus Silva", "veiculo": "CBX Twister", "placa": "JQI9D17", "status": "ATIVO"}, "MC26-14DEB8CF": {"nome": "Sidinalva de Jesus Silva", "veiculo": "Honda Biz", "placa": "RPH5E29", "status": "ATIVO"}, "MC26-DF5F772C": {"nome": "Ane Emile Silva Soares", "veiculo": "Gol", "placa": "OKS6D82", "status": "ATIVO"}, "MC26-4B8D3B9F": {"nome": "Marcos Henrique de Jesus Lima", "veiculo": "Shineray Jet SS 125 EFI", "placa": "SJR8A06", "status": "ATIVO"}, "MC26-4DABBE90": {"nome": "Jessica Santos Batista", "veiculo": "Biz branca 125", "placa": "SOE4J24", "status": "ATIVO"}, "MC26-D5EEF762": {"nome": "Bruno Nepomuceno dos Reis", "veiculo": "Celta", "placa": "NZZ2C49", "status": "ATIVO"}, "MC26-149F50B1": {"nome": "Edmundo Silva Santos Júnior", "veiculo": "Fox", "placa": "JRM4D82", "status": "ATIVO"}, "MC26-CA255C17": {"nome": "Jailson Reis Santos", "veiculo": "Fox Track", "placa": "PKM8437", "status": "ATIVO"}, "MC26-985717DB": {"nome": "Valdivino de Jesus dos Santos", "veiculo": "Vectra", "placa": "JRI7566", "status": "ATIVO"}, "MC26-10856EB9": {"nome": "João Carlos Matos de Frias", "veiculo": "Punto", "placa": "JRL9I57", "status": "ATIVO"}, "MC26-B8D4FA38": {"nome": "Iracema Improta", "veiculo": "Fiat Strada Volcano 13AT", "placa": "THA9E94", "status": "ATIVO"}, "MC26-44F815B2": {"nome": "Iracema Improta", "veiculo": "Honda Biz ES", "placa": "TGW4B35", "status": "ATIVO"}, "MC26-CE257245": {"nome": "Ricardo Bittencourt Santos", "veiculo": "Toyota Corolla Cross XRX Híbrido", "placa": "RTP8A60", "status": "ATIVO"}, "MC26-5FA66108": {"nome": "Marcio Pires de Mesquita", "veiculo": "CG Titan EX 150", "placa": "NZN0783", "status": "ATIVO"}, "MC26-312B03DE": {"nome": "Davi Santana Silva Dos Anjos", "veiculo": "Volkswagen Virtus Comfortline", "placa": "SJQ2G00", "status": "ATIVO"}, "MC26-78776697": {"nome": "José Wilson de Jesus", "veiculo": "Corsa", "placa": "NYI3922", "status": "ATIVO"}, "MC26-8E0C3E4D": {"nome": "Átila da Silva Borges", "veiculo": "Voyage", "placa": "OUO8526", "status": "ATIVO"}, "MC26-A8360F38": {"nome": "Rafaella Araújo de Jesus", "veiculo": "Biz 125", "placa": "SJY2C57", "status": "ATIVO"}, "MC26-6D4981C1": {"nome": "Isabelle Ribeiro da Silva Agapito", "veiculo": "Honda Biz", "placa": "TMS9A75", "status": "ATIVO"}, "MC26-7E97B726": {"nome": "Ivana Ribeiro da Silva", "veiculo": "Renault Logan", "placa": "PLI8802", "status": "ATIVO"}, "MC26-CD8A0BD6": {"nome": "Mariana Conceição Lago de Santana Pereira", "veiculo": "Hyundai Creta", "placa": "TMZ8B91", "status": "ATIVO"}, "MC26-0E633A61": {"nome": "Mariana Conceição Lago de Santana Pereira", "veiculo": "Chevrolet Tracker", "placa": "RPC0H51", "status": "ATIVO"}, "MC26-6B94F1E7": {"nome": "Mariana Bittencourt Santos", "veiculo": "Jeep Compass", "placa": "RPB6D44", "status": "ATIVO"}, "MC26-645B9349": {"nome": "Camila Araújo Mesquita", "veiculo": "Honda Biz 125", "placa": "JSA2536", "status": "ATIVO"}, "MC26-DC58699F": {"nome": "Vilma Bittencourt Santos", "veiculo": "Tracker", "placa": "SJK3J83", "status": "ATIVO"}, "MC26-4406AC24": {"nome": "Cristiane Eduarda Santana", "veiculo": "Chevrolet Onix", "placa": "QFR8D42", "status": "ATIVO"}, "MC26-E300137E": {"nome": "Caio Vinícius Santos de Araujo", "veiculo": "Bajaj Dominar NS400z 2026", "placa": "THG9A46", "status": "ATIVO"}, "MC26-713489F7": {"nome": "Alicleide Alves de Jesus", "veiculo": "Renault Sandero", "placa": "PJS2888", "status": "ATIVO"}, "MC26-4D142EDD": {"nome": "Marcos Henrique de Jesus Lima", "veiculo": "Ford Focus", "placa": "HNS3C44", "status": "ATIVO"}, "MC26-960B64BD": {"nome": "Jandson Souza dos Santos", "veiculo": "Fiat Strada", "placa": "JSR4209", "status": "ATIVO"}, "MC26-4D9561E5": {"nome": "Jandson Souza dos Santos", "veiculo": "Volkswagen T-Cross", "placa": "SKG3B98", "status": "ATIVO"}, "MC26-DF0606C9": {"nome": "Marta Regina Oliveira Argolo", "veiculo": "Citroën C3", "placa": "SJV4F43", "status": "ATIVO"}, "MC26-8EBFFB25": {"nome": "Jorge Luiz Lima Souza", "veiculo": "Fiat Argo", "placa": "RTA4E52", "status": "ATIVO"}, "MC26-70EB39C9": {"nome": "Antonio Vitor Freitas", "veiculo": "Volkswagen", "placa": "UOG5C17", "status": "ATIVO"}, "MC26-8FF0D564": {"nome": "Antonio Vitor Freitas", "veiculo": "Triumph", "placa": "QTX0C17", "status": "ATIVO"}, "MC26-0E263347": {"nome": "Antonio Vitor Freitas", "veiculo": "Ford", "placa": "MZB7A32", "status": "ATIVO"}, "MC26-56929E09": {"nome": "Tiffany Almeida Santana", "veiculo": "Volkswagen", "placa": "SKJ5H19", "status": "ATIVO"}, "MC26-50F7CFE5": {"nome": "Manoel Souza de Almeida", "veiculo": "Toyota", "placa": "RPE0F77", "status": "ATIVO"}, "MC26-4B955151": {"nome": "Edcarlos Santana Santos", "veiculo": "Hyundai", "placa": "RPD8C02", "status": "ATIVO"}, "MC26-6EB4A0AB": {"nome": "Lucas Souza Santos", "veiculo": "Honda HR-V", "placa": "SKB2F62", "status": "ATIVO"}, "MC26-19984D4C": {"nome": "Carlos Leoni de Oliveira Almeida Viana", "veiculo": "Kicks Play", "placa": "TUN1A29", "status": "ATIVO"}, "MC26-00416EB0": {"nome": "Atila Caique Alves Pereira", "veiculo": "Yamaha", "placa": "SKR8A83", "status": "ATIVO"}, "MC26-D978EAE6": {"nome": "Cristovao de Santana", "veiculo": "Hyundai HB20", "placa": "RDE6B23", "status": "ATIVO"}, "MC26-FB15E280": {"nome": "Heraldo Cardoso Argôlo", "veiculo": "Chevrolet Montana", "placa": "RPV3J59", "status": "ATIVO"}, "MC26-F76ACC0F": {"nome": "Jacson da Fonseca do Nascimento", "veiculo": "Creta", "placa": "GAH0B53", "status": "ATIVO"}, "MC26-6A35D630": {"nome": "Leandro de Santana Santos", "veiculo": "Não informado", "placa": "OKP5457", "status": "ATIVO"}, "MC26-9EF0CC8C": {"nome": "Eduardo França Souza Santos", "veiculo": "Volkswagen Voyage", "placa": "OUF7948", "status": "ATIVO"}, "MC26-19C8ECD7": {"nome": "Alan Davson Costa Santos", "veiculo": "Fiat Toro Ranch", "placa": "RPC7G25", "status": "ATIVO"}, "MC26-4D965AAB": {"nome": "Dr. Robert Caribé Noya", "veiculo": "Tiggo 7 PHEV", "placa": "TND1F24", "status": "ATIVO"}, "MC26-D9B9C82D": {"nome": "Guilherme Gomes Peneluc", "veiculo": "Hyundai HB20", "placa": "PLF7B32", "status": "ATIVO"}, "A7K92X": {"nome": "Moisés de Araújo Santos", "veiculo": "CAOA Chery Tiggo 5X", "placa": "RDG3C84", "status": "ATIVO"}};
+const codigo = new URLSearchParams(window.location.search).get("id");
+const c = document.getElementById("conteudo");
+if(codigo && cadastros[codigo] && cadastros[codigo].status==="ATIVO"){
+ const p=cadastros[codigo];
+ c.innerHTML=`<div class="status">✓ ACESSO AUTORIZADO</div>
+ <div class="dados"><strong>Morador:</strong><br>${p.nome}<br><br>
+ <strong>Veículo:</strong><br>${p.veiculo}<br><br>
+ <strong>Placa:</strong><br><span class="placa">${p.placa}</span></div>
+ <div class="validade">VÁLIDO SOMENTE<br>26 e 27/09/2026</div>
+ <div class="aviso">Confira se a placa apresentada corresponde ao veículo.</div>`;
 } else {
-
-    conteudo.innerHTML = `
-        <div class="status erro">
-            ✕ CREDENCIAL INVÁLIDA
-        </div>
-
-        <p>Este QR Code não corresponde a um veículo autorizado.</p>
-    `;
-
+ c.innerHTML=`<div class="status erro">✕ CREDENCIAL INVÁLIDA</div><p>Este QR Code não corresponde a um veículo autorizado.</p>`;
 }
-
-</script>
-
-</body>
-</html>
+</script></body></html>
